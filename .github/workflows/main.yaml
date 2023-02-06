@@ -1,4 +1,8 @@
-on: ["push", "pull_request"]
+on:
+  pull_request:
+  push:
+    branches:
+      - master
 
 name: main workflow
 
@@ -29,6 +33,12 @@ jobs:
 
       - name: Setup Node.js
         uses: actions/setup-node@v1
+
+      - name: Add dummy .env
+        run: touch .env
+
+      - name: Install Ganache
+        run: npm install -g ganache-cli@6.10.2
 
       - name: Install Ganache
         run: npm install -g ganache-cli@6.10.2
