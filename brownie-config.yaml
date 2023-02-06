@@ -1,0 +1,19 @@
+dependencies:
+  - OpenZeppelin/openzeppelin-contracts-upgradeable@4.1.0
+compiler:
+  solc:
+    remappings:
+      - '@openzeppelin=OpenZeppelin/openzeppelin-contracts-upgradeable@4.1.0'
+dotenv: .env
+wallets:
+  from_key: ${PRIVATE_KEY}
+development:
+    host: 127.0.0.1:8545
+    reverting_tx_gas_limit: 6721975
+    test_rpc:
+        cmd: ganache-cli
+        port: 8545
+        gas_limit: 6721975
+        accounts: 10
+        evm_version: petersburg
+        mnemonic: brownie
